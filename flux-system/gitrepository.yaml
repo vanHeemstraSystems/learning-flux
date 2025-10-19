@@ -1,0 +1,19 @@
+-----
+
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+name: learning-flux
+namespace: flux-system
+spec:
+interval: 1m0s
+ref:
+branch: main
+url: https://github.com/vanHeemstraSystems/learning-flux
+ignore: |
+# exclude all
+/*
+# include kubernetes manifests
+!/apps/
+!/infrastructure/
+!/clusters/
